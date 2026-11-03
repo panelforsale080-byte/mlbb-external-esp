@@ -33,7 +33,7 @@ jobs:
           APK=$(ls app/build/outputs/apk/debug/*.apk | head -1)
           "${ANDROID_HOME}/build-tools/35.0.0/aapt2" dump badging "$APK" | grep -q "package: name='ownapp.esp'"
           "${ANDROID_HOME}/build-tools/35.0.0/aapt2" dump badging "$APK" | grep -q "launchable-activity"
-          unzip -l "$APK" | grep -E 'lib/.*/LibToolEsp\.so'
+          unzip -l "$APK" | grep -E 'lib/.*/libLibToolEsp\.so'
           echo "OK: external ESP main application APK"
 
       - uses: actions/upload-artifact@v4
